@@ -16,14 +16,14 @@ import utils.Constants;
 
 public class MainTest extends BaseTest implements IExecutionListener {
 
-	@BeforeMethod
-	public void setup() throws MalformedURLException, InterruptedException {
-		setupThread();
-	}
+//	@BeforeMethod
+//	public void setup() throws MalformedURLException, InterruptedException {
+//		setupThread();
+//	}
 
 	@Test(priority = 1, groups = {"UI"})
 	public void loginSuccessfulTest() throws InterruptedException {
-		WebDriver driver = getDriver();
+//		WebDriver driver = getDriver();
 		driver.navigate().to(Constants.DASHBOARD_URL);
 		driver.manage().window().maximize();
 		Thread.sleep(3000);
@@ -55,10 +55,10 @@ public class MainTest extends BaseTest implements IExecutionListener {
 				.then().log().all().assertThat().statusCode(200);
 	}
 
-	@AfterMethod
-	public void tearDown() {
-		if (getDriver() != null) {
-			tearDownDriver();
-		}
-	}
+//	@AfterMethod
+//	public void tearDown() {
+//		if (getDriver() != null) {
+//			tearDownDriver();
+//		}
+//	}
 }
