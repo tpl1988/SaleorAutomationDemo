@@ -4,6 +4,10 @@
 	<artifactId>SaleorAutomation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<description>test</description>
+	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -52,6 +56,5 @@
 			<version>2.0.7</version>
 			<scope>test</scope>
 		</dependency>
-		
 	</dependencies>
 </project>
