@@ -1,16 +1,15 @@
 package test;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+//import java.net.MalformedURLException;
+//import java.net.URL;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
+//import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import utils.Constants;
 
 public class BaseTest {
 //	protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
@@ -34,11 +33,10 @@ public class BaseTest {
 
 	@BeforeMethod
 	public void setupDriver() {
-		// Setup the ChromeDriver using WebDriverManager
 		WebDriverManager.chromedriver().setup();
-
-		// Create a new instance of the ChromeDriver
-		driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-dev-shm-usage");
+		driver = new ChromeDriver(options);
 	}
 
 	@AfterMethod
