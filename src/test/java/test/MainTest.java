@@ -1,33 +1,19 @@
 package test;
 
-//import java.net.MalformedURLException;
-
 import org.testng.Assert;
 import org.testng.IExecutionListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-//import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.testng.annotations.AfterMethod;
-//import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.Constants;
-
 import static io.restassured.RestAssured.*;
 
 public class MainTest extends BaseTest implements IExecutionListener {
-
-//	@BeforeMethod
-//	public void setup() throws MalformedURLException, InterruptedException {
-//		setupThread();
-//	}
-
 	@Test(priority = 1)
 	public void loginSuccessfulTest() throws InterruptedException {
-//		WebDriver driver = getDriver();
 		driver.navigate().to(Constants.DASHBOARD_URL);
 		driver.manage().window().maximize();
-//		Thread.sleep(3000);
 
 		try {
 			WebElement emailField = driver.findElement(By.xpath("//input[@name='email']"));
@@ -55,11 +41,4 @@ public class MainTest extends BaseTest implements IExecutionListener {
 		given().log().all().header("Content-Type", "application/json").body(mutation).when().post(Constants.API_URL)
 				.then().log().all().assertThat().statusCode(200);
 	}
-
-//	@AfterMethod
-//	public void tearDown() {
-//		if (getDriver() != null) {
-//			tearDownDriver();
-//		}
-//	}
 }
