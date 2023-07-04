@@ -23,7 +23,7 @@ public class MainTest extends BaseTest implements IExecutionListener {
 		passwordField.sendKeys(Keys.CONTROL + "A");
 		passwordField.sendKeys(Keys.DELETE);
 		passwordField.sendKeys(Constants.PASSWORD);
-//		signInButton.click();
+		signInButton.click();
 		Thread.sleep(3000);
 		Assert.assertTrue(driver.findElement(By.xpath("//div[@data-test-id='welcome-header']")).isDisplayed());
 	}
