@@ -24,7 +24,7 @@ public class MainTest extends BaseTest implements IExecutionListener {
 		passwordField.sendKeys(Keys.DELETE);
 		passwordField.sendKeys(Constants.PASSWORD);
 		signInButton.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		Assert.assertTrue(driver.findElement(By.xpath("//div[@data-test-id='welcome-header']")).isDisplayed());
 	}
 
