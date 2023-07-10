@@ -14,6 +14,7 @@ public class MainTest extends BaseTest implements IExecutionListener {
 	public void loginSuccessfulTest() throws InterruptedException {
 		driver.navigate().to(Constants.DASHBOARD_URL);
 		driver.manage().window().maximize();
+		Thread.sleep(3000);
 		WebElement emailField = driver.findElement(By.xpath("//input[@name='email']"));
 		WebElement passwordField = driver.findElement(By.xpath("//input[@name='password']"));
 		WebElement signInButton = driver.findElement(By.xpath("//button[@type='submit']"));
@@ -24,7 +25,7 @@ public class MainTest extends BaseTest implements IExecutionListener {
 		passwordField.sendKeys(Keys.DELETE);
 		passwordField.sendKeys(Constants.PASSWORD);
 		signInButton.click();
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		Assert.assertTrue(driver.findElement(By.xpath("//div[@data-test-id='welcome-header']")).isDisplayed());
 	}
 
